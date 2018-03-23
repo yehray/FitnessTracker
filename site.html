@@ -1,17 +1,30 @@
 <html>
     <head>
             <title>Fitness Tracker</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
             <script src="script.js"></script>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <script>
+            $( function() {
+              $( "#datepicker" ).datepicker();
+            } );
+            </script> 
     </head>
 
     <body>
         <form>
+            Current Date:<br>
+            <input id="datepicker" type="text" name="pick date"><br>
             Number of Calories:<br>
             <input id=calories type="text" name="number of calories"><br>
             Weight:<br>
             <input id=weight type="text" name="current weight"><br>
-            <input id="submit" onclick="myFunction()" type="button" value="Submit">
+            <input id="submit" onclick="addData()" type="button" value="Submit"><br>
+            <input id="delete" onclick="deleteData()" type="button" value="Delete">
+
         </form>
 
 
