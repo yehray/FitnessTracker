@@ -75,12 +75,26 @@ function registration(){
     var email = document.getElementById("email").value;
     var dataString = 'username1=' + username + '&password1=' + password + '&email1=' + email;
 
-    if (username == '' || login == ''){
+    if (username == '' || password == '' || email == ''){
         window.alert("Please fill in username or password.");
     }
     else{
-        ajaxConnect(dataString, 'resgistation.php')
-    }
+        $.ajax({
+            type: "POST",
+            url: 'registration.php',
+            data: dataString,
+            cache: false,
+            crossDomain : true,
+            success: function(response) {
+                window.alert("New account created");
+                if (response.status == 403) {
+                    window.alert("The password or username you have entered is not valid");
+                }
+                else {
+                    window.location = 'http://localhost/fitness_tracker/site.html';
+                }
+            }
+        });    }
     return false;
 }
 
