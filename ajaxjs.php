@@ -11,7 +11,6 @@ if ($action ==  "add") {
     $query = mysqli_query($connection, "INSERT INTO FitnessData(Dates, Calories, Weight) VALUES ('$date2', '$calories2', '$weight2')");
 }
 if ($action ==  "delete") {
-    echo $date2;
     $query = mysqli_query($connection, "DELETE FROM FitnessData WHERE Dates = '$date2'");
 }
 

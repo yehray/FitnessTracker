@@ -1,11 +1,15 @@
 header {
-    background-color: #F1F1F1;
+    background-color: lightskyblue;
+    font: 14px sans-serif;
     text-align: center;
     padding: 20px;
 }
 
 body {
     background-color: lightblue;
+    font: 14px sans-serif;
+    width: 500px;
+    padding: 20px;
 }
 
 /* Style the top navigation bar */
