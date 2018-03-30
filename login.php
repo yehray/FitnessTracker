@@ -5,15 +5,16 @@ $connection = mysqli_connect("localhost", "root", "7UPdrinker", "fitness_databas
 $query = mysqli_query($connection, "SELECT * FROM users where username = '$username2' AND password = '$password2'") or die(mysqli_error($connection));
 $row = mysqli_fetch_array($query, MYSQLI_BOTH) or die(mysqli_error($connection));
 if(!empty($row['username']) AND !empty($row['password'])) {
-    // session_start();
-    // $_SESSION['username'] = $username2;
-    header('Location: http://localhost/fitness_tracker/site.html');
-    echo "Successful Login"; 
+    session_start();
+    $_SESSION['username'] = $username2;
+    http_response_code(200);
+    echo "Successful Login";
     exit;
 }
-// else{
-//     echo "The password or username you have entered is not valid";
-// }
-// mysqli_close($connection);
+else{
+    http_response_code(403);
+    echo "The password or username you have entered is not valid";
+}
+mysqli_close($connection);
 
 ?>
