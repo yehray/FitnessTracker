@@ -6,7 +6,7 @@ $date2 = $_POST['date1'];
 $calories2 = $_POST['calories1'];
 $weight2 = $_POST['weight1'];
 $action = $_POST['action1'];
-$connection = mysqli_connect("localhost", "root", "7UPdrinker", "fitness_database") or die("Unable to connect to MySQL");  
+$connection = mysqli_connect("localhost", "root", "password", "fitness_database") or die("Unable to connect to MySQL");  
 if ($action ==  "add") {
     $query = mysqli_query($connection, "INSERT INTO FitnessData(Dates, Calories, Weight) VALUES ('$date2', '$calories2', '$weight2')");
 }
