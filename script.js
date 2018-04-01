@@ -98,6 +98,18 @@ function registration(){
     return false;
 }
 
+function testButton(){
+    $.ajax({
+        url: 'http://127.0.0.1:5000/',
+        data: "asdas",
+        type: 'POST',
+        success: function(response) {
+            // var r = JSON.parse(response)
+            console.log(response);
+        }
+    });
+}
+
 function ajaxConnect(dataString, url){
     $.ajax({
         type: "POST",
