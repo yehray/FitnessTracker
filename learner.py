@@ -17,8 +17,15 @@ mysql.init_app(app)
  
 @app.route("/", methods=['POST'])
 def hello():
-    a = {'foo': 3}
-    return json.dumps(a)
+    cur = mysql.get_db().cursor()
+    cur.execute('SELECT * FROM FitnessData WHERE Calories = 3')
+    row_headers=[x[0] for x in cur.description] #this will extract row headers
+    rv = cur.fetchall()
+    json_data=[]
+    for result in rv:
+        json_data.append(dict(zip(row_headers,result)))
+    return json.dumps(json_data, indent=4, sort_keys=True, default=str)
+
 
 
 @app.route("/hello", methods=['POST'])
