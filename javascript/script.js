@@ -55,12 +55,13 @@ function login(){
             data: dataString,
             cache: false,
             crossDomain : true,
+            dataType: 'text',
             success: function(response) {
-                if (response.status == 403) {
-                    window.alert("The password or username you have entered is not valid");
+                if (response == 200) {
+                    window.location = 'http://localhost/fitness_tracker/site.html';
                 }
                 else {
-                    window.location = 'http://localhost/fitness_tracker/site.html';
+                    window.alert("The password or username you have entered is not valid");
                 }
             }
         });
