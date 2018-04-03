@@ -11,7 +11,7 @@ if(!empty($row['username']) AND !empty($row['password'])) {
     session_start();
     $_SESSION['username'] = $username2;
     http_response_code(200);
-    echo "200";
+    echo $_SESSION['username'];
     exit;
 }
 else{

@@ -9,7 +9,7 @@ function addData(){
     else{
         $.ajax({
             type: "POST",
-            url: "ajaxjs.php",
+            url: "php/ajaxjs.php",
             data: dataString,
             cache: false,
             crossDomain : true,
@@ -30,7 +30,7 @@ function deleteData(){
     else{
         $.ajax({
             type: "POST",
-            url: "ajaxjs.php",
+            url: "php/ajaxjs.php",
             data: dataString,
             cache: false,
             crossDomain : true,
@@ -51,13 +51,14 @@ function login(){
     else{
         $.ajax({
             type: "POST",
-            url: "login.php",
+            url: "php/login/login.php",
             data: dataString,
             cache: false,
             crossDomain : true,
             dataType: 'text',
             success: function(response) {
-                if (response == 200) {
+                console.log(response);
+                if (response == username) {
                     window.location = 'http://localhost/fitness_tracker/site.html';
                 }
                 else {
@@ -82,7 +83,7 @@ function registration(){
     else{
         $.ajax({
             type: "POST",
-            url: 'registration.php',
+            url: 'php/login/registration.php',
             data: dataString,
             cache: false,
             crossDomain : true,
