@@ -22,8 +22,7 @@ function addData(){
 
 function deleteData(){
     var date = new Date(document.getElementById("datepicker").value).toISOString();
-    var dataString = 'date1=' + date.slice(0,10) + '&action1=' + 'delete';
-    
+    var dataString = 'date1=' + date.slice(0,10) + '&action1=' + 'delete';  
     if (date == ''){
         window.alert("Please Fill a Date");
     }
@@ -67,7 +66,6 @@ function login(){
             }
         });
     }
-    
     return false;
 }
 
@@ -76,7 +74,6 @@ function registration(){
     var password = document.getElementById("password").value;
     var email = document.getElementById("email").value;
     var dataString = 'username1=' + username + '&password1=' + password + '&email1=' + email;
-
     if (username == '' || password == '' || email == ''){
         window.alert("Please fill in username or password.");
     }

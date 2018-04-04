@@ -1,6 +1,6 @@
 function fetch_data(){
      $.ajax({  
-          url:"php/login/select.php",  
+          url:"php/editTable/select.php",  
           method:"POST",  
           success:function(data){  
                $('#live_data').html(data);  
@@ -10,7 +10,7 @@ function fetch_data(){
 
 function edit_data(id, text, column_name){ 
      $.ajax({  
-          url:"php/login/edit.php",  
+          url:"php/editTable/edit.php",  
           method:"POST",  
           data:{id:id, text:text, column_name:column_name},  
           dataType:"text",  
@@ -22,7 +22,7 @@ function edit_data(id, text, column_name){
 
 function delete_data(id, text, column_name){
     $.ajax({  
-        url:"php/login/delete.php",  
+        url:"php/editTable/delete.php",  
         method:"POST",  
         data:{id:id},  
         dataType:"text",  
