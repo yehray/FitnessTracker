@@ -1,5 +1,8 @@
+<!DOCTYPE html>
+
 <html>  
-    <head>  
+    <head>
+        <meta charset="UTF-8">  
         <title>Table</title>  
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -11,8 +14,18 @@
                 fetch_data();
                 $(document).on('click', '#addButton', function(){
                     insert_data()});
+                $(document).on('click', '.deleteButton', function(){
+                    delete_data(this.id)});
+                $(document).on('blur', '.dateClase', function(){
+                    test()});
+                $(document).on('blur', '.caloriesClass', function(){
+                    editCalories()});
+                $(document).on('blur', '.weightClass', function(){
+                    editCalories()});
+
             });
         </script>
+
 
     </head>  
     <body>  

@@ -8,12 +8,16 @@ function fetch_data(){
      });  
 }
 
-function delete_data(id, text, column_name){
+function delete_data(idCLicked){
+    var id = idCLicked;
+    var dataString = 'id1=' + id;
+    console.log(dataString);
     $.ajax({  
-        url:"php/editTable/delete.php",  
-        method:"POST",  
-        data:{id:id},  
-        dataType:"text",  
+        type: "POST",
+        url: "php/editTable/delete.php",
+        data: dataString,
+        cache: false,
+        crossDomain : true, 
         success:function(data){  
             fetch_data();  
         }  
@@ -21,11 +25,27 @@ function delete_data(id, text, column_name){
 }
 
 function insert_data(){ 
+    var date = new Date(document.getElementById("addDate").value).toISOString();  
+    var calories = $('#Calories').text();  
+    var weight = $('#Weight').text(); 
+    var dataString = 'date1=' + date.slice(0,10) + '&calories1=' + calories + '&weight1=' + weight;
+    $.ajax({
+        type: "POST",
+        url: "php/editTable/insert.php",
+        data: dataString,
+        cache: false,
+        crossDomain : true,
+        success: function() {
+            fetch_data();  
+        }
+    });
+    return false;
+}
+
+function edit_data(){
     var date = new Date(document.getElementById("datepicker").value).toISOString();  
     var calories = $('#Calories').text();  
     var weight = $('#Weight').text(); 
-    console.log(date.slice(0,10) );
-    var dataString = 'date1=' + date.slice(0,10) + '&calories1=' + calories + '&weight1=' + weight;
     $.ajax({
         type: "POST",
         url: "php/editTable/insert.php",
@@ -38,5 +58,8 @@ function insert_data(){
         }
     });
     return false;
+}
 
+function test(){
+    console.log("SUCCESS");
 }

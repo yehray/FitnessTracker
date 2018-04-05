@@ -3,18 +3,20 @@ $connection = mysqli_connect("localhost", "root", "password", "fitness_database"
 $output = '';
 session_start();
 $username = $_SESSION['username']; 
-// $result = mysqli_query($connection, "SELECT * FROM FitnessData WHERE username = '$username'");
-$result = mysqli_query($connection, "SELECT * FROM FitnessData");
+$result = mysqli_query($connection, "SELECT * FROM FitnessData WHERE username = '$username'");
+// $result = mysqli_query($connection, "SELECT * FROM FitnessData");
 
 $output .= 
         '<script>
         $(function() {
-            $("#datepicker").datepicker();
+            $("#addDate").datepicker().datepicker("setDate", new Date());
+            $(".editDate").datepicker().datepicker("setDate", new Date());
         });
         </script>
-         <div class="table-responsive">  
+        <div class="table-responsive">  
         <table class="table table-bordered">  
             <tr> 
+                <th width="10%">ID</th>  
                 <th width="40%">Date</th>  
                 <th width="40%">Calories</th>  
                 <th width="40%">Weight</th>  
@@ -24,19 +26,20 @@ $output .=
       while($row = mysqli_fetch_array($result)){  
            $output .=  
                 '<tr>  
-                    <td class="dateClass" contenteditable>'.$row[0].'</td>  
+                    <td class="idClass" id="idNum">'.$row[4].'</td>    
+                    <td class="dateClass"><input class="editDate" id="'.$row[0].'" type="text"></td>  
                     <td class="caloriesClass" contenteditable>'.$row[1].'</td>  
-                    <td class="weightClass" contenteditable>'.$row[2].'</td>  
-                    <td><button type="button" name="delete_btn" class="btn btn-xs btn-danger btn_delete">x</button></td>  
+                    <td class="weightClass" contenteditable>'.$row[2].'</td>
+                    <td><button type="button" class="deleteButton" id ="'.$row[4].'">x</button></td>  
                 </tr>';  
       }  
       $output .=   
-           '<tr>  
-                <td id="Date" contenteditable><input id="datepicker" type="text" name="pick date"><br>
-                </td>  
+           '<tr>
+                <th width="10%">id</th>  
+                <td id="Date" contenteditable><input id=addDate  name = "pick date" type="text"></td>  
                 <td id="Calories" contenteditable></td>  
                 <td id="Weight" contenteditable></td>  
-                <td><button type="button" name="btn_add" id="addButton" class="btn btn-xs btn-success">+</button></td>  
+                <td><button type="button" name="addButton" id="addButton" class="btn btn-xs btn-success">+</button></td>  
            </tr> ';  
  }  
  else  
