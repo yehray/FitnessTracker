@@ -27,9 +27,9 @@ $output .=
            $output .=  
                 '<tr>  
                     <td class="idClass" id="idNum">'.$row[4].'</td>    
-                    <td class="dateClass"><input class="editDate" id="'.$row[0].'" type="text"></td>  
-                    <td class="caloriesClass" contenteditable>'.$row[1].'</td>  
-                    <td class="weightClass" contenteditable>'.$row[2].'</td>
+                    <td class="dateClass"><input class="editDate" id="'.$row[0].'" type="text" data-id="'.$row[4].'"></td>  
+                    <td class="caloriesClass" contenteditable id="'.$row[1].'" data-id="'.$row[4].'">'.$row[1].'</td>  
+                    <td class="weightClass" contenteditable id="'.$row[2].'" data-id="'.$row[4].'"> '.$row[2].'</td>
                     <td><button type="button" class="deleteButton" id ="'.$row[4].'">x</button></td>  
                 </tr>';  
       }  

@@ -17,11 +17,11 @@
                 $(document).on('click', '.deleteButton', function(){
                     delete_data(this.id)});
                 $(document).on('blur', '.dateClase', function(){
-                    test()});
+                    edit_data(this.id, 'date')});
                 $(document).on('blur', '.caloriesClass', function(){
-                    editCalories()});
+                    edit_data(this.id, this.fetch_data, 'calories')});
                 $(document).on('blur', '.weightClass', function(){
-                    editCalories()});
+                    edit_data(this.id, 'weight')});
 
             });
         </script>

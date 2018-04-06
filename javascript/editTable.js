@@ -42,13 +42,23 @@ function insert_data(){
     return false;
 }
 
-function edit_data(){
-    var date = new Date(document.getElementById("datepicker").value).toISOString();  
-    var calories = $('#Calories').text();  
-    var weight = $('#Weight').text(); 
+function edit_data(idTag, idClicked, editItem){
+    var element = document.getElementById(idTag);
+    var newVal= document.getElementById(idTag).innerHTML;
+    var idNum = element.getAttribute('data-id'); 
+    var dataString = 'idNum1=' + idNum;
+    if(editItem == 'calories'){
+        var dataString = dataString + '&calories1=' + newVal + '&editItem1=' + editItem;
+    }
+    if(editItem == 'weight'){
+        var dataString = dataString + '&weight1=' + newVal + '&editItem1=' + editItem;
+    }
+    // var date = new Date(document.getElementById("datepicker").value).toISOString();  
+    // var calories = $('#Calories').text();  
+    // var weight = $('#Weight').text(); 
     $.ajax({
         type: "POST",
-        url: "php/editTable/insert.php",
+        url: "php/editTable/edit.php",
         data: dataString,
         cache: false,
         crossDomain : true,
