@@ -16,11 +16,11 @@
                     insert_data()});
                 $(document).on('click', '.deleteButton', function(){
                     delete_data(this.id)});
-                $(document).on('blur', '.dateClase', function(){
-                    edit_data(this.id, 'date')});
+                $(document).on('blur', '.dateClass', function(){
+                    edit_data(this.id, this.fetch_data, 'date')});
                 $(document).on('blur', '.caloriesClass', function(){
                     edit_data(this.id, this.fetch_data, 'calories')});
-                $(document).on('blur', '.weightClass', function(){
+                $(document).on('blur', '.weightlass', function(){
                     edit_data(this.id, this.fetch_data, 'weight')});
 
             });

@@ -7,13 +7,7 @@ $result = mysqli_query($connection, "SELECT * FROM FitnessData WHERE username = 
 // $result = mysqli_query($connection, "SELECT * FROM FitnessData");
 
 $output .= 
-        '<script>
-        $(function() {
-            $("#addDate").datepicker().datepicker("setDate", new Date());
-            $(".editDate").datepicker().datepicker("setDate", new Date());
-        });
-        </script>
-        <div class="table-responsive">  
+        '<div class="table-responsive">  
         <table class="table table-bordered">  
             <tr> 
                 <th width="10%">ID</th>  
@@ -27,9 +21,9 @@ $output .=
            $output .=  
                 '<tr>  
                     <td class="idClass" id="idNum">'.$row[4].'</td>    
-                    <td class="dateClass"><input class="editDate" id="'.$row[0].'" type="text" data-id="'.$row[4].'"></td>  
-                    <td class="caloriesClass" contenteditable id="'.$row[1].'" data-id="'.$row[4].'">'.$row[1].'</td>  
-                    <td class="weightClass" contenteditable id="'.$row[2].'" data-id="'.$row[4].'"> '.$row[2].'</td>
+                    <td class="dateClass" contenteditable id="'.$row[0].'" data-id="'.$row[4].'">'.$row['Dates'].'</td>  
+                    <td class="caloriesClass" contenteditable id="'.$row[1].'" data-id="'.$row[4].'">'.$row['Calories'].'</td>  
+                    <td class="weightClass" contenteditable id="'.$row[2].'" data-id="'.$row[4].'"> '.$row['Weight'].'</td>
                     <td><button type="button" class="deleteButton" id ="'.$row[4].'">x</button></td>  
                 </tr>';  
       }  

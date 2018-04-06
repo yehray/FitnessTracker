@@ -12,8 +12,11 @@ $date2 = $_POST['date1'];
 $calories2 = $_POST['calories1'];
 $weight2 = $_POST['weight1'];
 $editItem2 = $_POST['editItem1'];
+echo $date2;
 if($editItem2 == 'date'){
-    $query = mysqli_query($connection, "UPDATE FitnessData SET Calories = '$calories2' WHERE id = $idNum2") or die("Unable to connect to MySQL");
+    $query = mysqli_query($connection, "UPDATE FitnessData SET Dates = '$date2' WHERE id = $idNum2") or die("Unable to connect to MySQL");
+    echo mysqli_errno($connection) . ": " . mysqli_error($connection) . "\n";
+
 }
 if($editItem2 == 'calories'){
     $query = mysqli_query($connection, "UPDATE FitnessData SET Calories = '$calories2' WHERE id = $idNum2") or die("Unable to connect to MySQL");
@@ -23,7 +26,6 @@ if($editItem2 == 'weight'){
     $query = mysqli_query($connection, "UPDATE FitnessData SET Weight = '$weight2' WHERE id = $idNum2") or die("Unable to connect to MySQL");
 }
 
-echo mysqli_errno($connection) . ": " . mysqli_error($connection) . "\n";
 echo "Form Submitted succesfully";
 mysqli_close($connection);
 ?>
