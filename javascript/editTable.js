@@ -56,6 +56,7 @@ function edit_data(idTag, idClicked, editItem){
     // var date = new Date(document.getElementById("datepicker").value).toISOString();  
     // var calories = $('#Calories').text();  
     // var weight = $('#Weight').text(); 
+    console.log(dataString);
     $.ajax({
         type: "POST",
         url: "php/editTable/edit.php",
