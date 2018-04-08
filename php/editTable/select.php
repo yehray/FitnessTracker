@@ -14,7 +14,7 @@ $output .=
                 <th width="40%">Date</th>  
                 <th width="40%">Calories</th>  
                 <th width="40%">Weight</th>  
-                <th width="10%">Delete</th>  
+                <th width="10%">Add/Delete</th>  
             </tr>';  
  if(mysqli_num_rows($result) > 0){  
       while($row = mysqli_fetch_array($result)){  
@@ -33,7 +33,7 @@ $output .=
                 <td id="Date" contenteditable><input id=addDate  name = "pick date" type="text"></td>  
                 <td id="Calories" contenteditable></td>  
                 <td id="Weight" contenteditable></td>  
-                <td><button type="button" name="addButton" id="addButton" class="btn btn-xs btn-success">+</button></td>  
+                <td><button type="button" name="addButton" id="addButton">+</button></td>  
            </tr> ';  
  }  
  else  
