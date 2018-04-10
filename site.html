@@ -8,11 +8,43 @@
             <script src="javascript/script.js"></script>
             <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+            <script src="javascript/editFoodTable.js"></script>
             <script>
-                $(function() {
-                    $("#datepicker").datepicker();
+                $(document).ready(function() {
+                    fetch_data();
+                    $(document).on('click', '#addButton', function(){
+                        insert_data()});
+                    $(document).on('click', '.deleteButton', function(){
+                        delete_data(this.id)});
+                    $(document).on('blur', '.ui-widget', function(){
+                        findFoodData()});
+                    $(document).on('click', '#tags', function(){
+                        $.ajax({  
+                        type: "POST",
+                        url: "php/editFoodTable/getFoodArray.php",
+                        cache: false,
+                        crossDomain : true, 
+                        success:function(result){
+                            foodArray = JSON.parse(result);
+                            $("#tags").autocomplete({
+                                    source: foodArray
+                            });
+                    }  
+                    
+                    
+                    
+                    });
                 });
-                </script>
+       
+                $(function() {
+                    $("#datepicker").datepicker().datepicker( "setDate", new Date());
+                });
+          
+                });
+            </script>
     </head>
 
     <header>
@@ -45,6 +77,14 @@
        </script> -->
 
         <input type="button" value="Next Page" onClick="testButton()"/>
+
+        <div class="container">  
+                <div class="table-responsive">  
+                    <h3 align="center">Table</h3><br />  
+                    This is a table<br/>
+                    <div id="live_data"></div>   
+                </div>  
+        </div> 
 
     </body>
 

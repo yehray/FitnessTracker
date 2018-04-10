@@ -16,7 +16,6 @@
         crossDomain : true, 
         success:function(result){
                 foodArray = JSON.parse(result);
-                console.log(foodArray);
                 $("#tags").autocomplete({
                         source: foodArray
                 });

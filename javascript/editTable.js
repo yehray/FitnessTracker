@@ -109,5 +109,4 @@ function isValidDate(dateString)
 
     // Check the range of the day
     return day > 0 && day <= monthLength[month - 1];
-
 };
