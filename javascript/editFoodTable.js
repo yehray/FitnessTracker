@@ -81,6 +81,23 @@ function callBack(foodArray){
         inTable = false;
     }
 }
+
+
+function increaseDate(){
+    var nextDay = $('#datepicker').datepicker('getDate'); 
+    nextDay.setDate(nextDay.getDate()+1); 
+    $('#datepicker').datepicker('setDate', nextDay);
+    fetch_data();
+}
+
+function decreaseDate(){
+    var prevDay = $('#datepicker').datepicker('getDate'); 
+    prevDay.setDate(prevDay.getDate()-1); 
+    $('#datepicker').datepicker('setDate', prevDay);
+    fetch_data();
+}
+
+
 function test(){
     console.log();
 }

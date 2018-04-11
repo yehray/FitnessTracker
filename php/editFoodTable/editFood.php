@@ -12,7 +12,9 @@ $totalProtein = 0;
 $totalcCarbohydrates = 0;
 $totalSugars = 0;
 $output .= 
-        '<div class="table-responsive">  
+        '
+        <h3 align="center">Table for '.$date2.'</h3><br />  
+        <div class="table-responsive">  
         <table class="table table-bordered">  
             <tr> 
                 <th width="5%">ID</th>  
@@ -25,49 +27,45 @@ $output .=
             </tr>';  
 
 if(mysqli_num_rows($result) > 0){  
-      while($row = mysqli_fetch_array($result)){ 
-          $totalCalories += $row['Calories'];
-          $totalProtein += $row['Protein'];
-          $totalcCarbohydrates += $row['Carbohydrates'];
-          $totalSugars += $row['Sugars'];
-           $output .=  
-                '<tr>  
-                    <td class="idClass" id="idNum">'.$row['id'].'</td>    
-                    <td class="foodClass" contenteditable id="'.$row['Food'].'" data-id="'.$row['id'].'">'.$row['Food'].'</td>  
-                    <td class="caloriesClass" contenteditable id="'.$row['Calories'].'" data-id="'.$row['id'].'">'.$row['Calories'].'</td>  
-                    <td class="proteinClass" contenteditable id="'.$row['Protein'].'" data-id="'.$row['id'].'"> '.$row['Protein'].'</td>
-                    <td class="carbohydratesClass" contenteditable id="'.$row['Carbohydrates'].'" data-id="'.$row['id'].'"> '.$row['Carbohydrates'].'</td>
-                    <td class="sugarClass" contenteditable id="'.$row['Sugars'].'" data-id="'.$row['id'].'"> '.$row['Sugars'].'</td>
-                    <td><button type="button" class="deleteButton" id ='.$row['id'].'>x</button></td>  
-                </tr>';   
+    while($row = mysqli_fetch_array($result)){ 
+        $totalCalories += $row['Calories'];
+        $totalProtein += $row['Protein'];
+        $totalcCarbohydrates += $row['Carbohydrates'];
+        $totalSugars += $row['Sugars'];
+        $output .=  
+            '<tr>  
+                <td class="idClass" id="idNum">'.$row['id'].'</td>    
+                <td class="foodClass" contenteditable id="'.$row['Food'].'" data-id="'.$row['id'].'">'.$row['Food'].'</td>  
+                <td class="caloriesClass" contenteditable id="'.$row['Calories'].'" data-id="'.$row['id'].'">'.$row['Calories'].'</td>  
+                <td class="proteinClass" contenteditable id="'.$row['Protein'].'" data-id="'.$row['id'].'"> '.$row['Protein'].'</td>
+                <td class="carbohydratesClass" contenteditable id="'.$row['Carbohydrates'].'" data-id="'.$row['id'].'"> '.$row['Carbohydrates'].'</td>
+                <td class="sugarClass" contenteditable id="'.$row['Sugars'].'" data-id="'.$row['id'].'"> '.$row['Sugars'].'</td>
+                <td><button type="button" class="deleteButton" id ='.$row['id'].'>x</button></td>  
+            </tr>';   
       }  
       $output .=   
-           '<tr >
-            <th width="10%">id</th> 
-            <th width="10%">
-            <div class="ui-widget" id="addFood">
-            <input id="tags" class="searchBar">
-            </div> </th> 
-                <td id="editCalories" contenteditable></td>  
-                <td id="editProtein" contenteditable></td>
-                <td id="editCarbohydrates" contenteditable></td>  
-                <td id="editSugars" contenteditable></td>    
-                <td><button type="button" name="addButton" id="addButton">+</button></td>  
-           </tr> 
-           <tr >
-           <th></th> 
-           <th>TOTAL:</th> 
-           <th>'.$totalCalories.'</th> 
-           <th>'.$totalProtein.'</th> 
-           <th>'.$totalcCarbohydrates.'</th> 
-           <th>'.$totalSugars.'</th> 
-
-          </tr>      
-           '
-           
-           
-           
-           ;  
+                '<tr >
+                <th width="10%">id</th> 
+                <th width="10%">
+                <div class="ui-widget" id="addFood">
+                <input id="tags" class="searchBar">
+                </div> </th> 
+                    <td id="editCalories" contenteditable></td>  
+                    <td id="editProtein" contenteditable></td>
+                    <td id="editCarbohydrates" contenteditable></td>  
+                    <td id="editSugars" contenteditable></td>    
+                    <td><button type="button" name="addButton" id="addButton">+</button></td>  
+                </tr> 
+                <tr >
+                <th></th> 
+                <th>TOTAL:</th> 
+                <th>'.$totalCalories.'</th> 
+                <th>'.$totalProtein.'</th> 
+                <th>'.$totalcCarbohydrates.'</th> 
+                <th>'.$totalSugars.'</th> 
+                </tr>      
+                '
+                ;  
  }  
  else  
  {  
