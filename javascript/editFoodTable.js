@@ -1,9 +1,14 @@
 function fetch_data(){
+    var date = new Date(document.getElementById("datepicker").value).toISOString();
+    var dataString = 'date1=' + date.slice(0,10);
     $.ajax({  
-         url:"php/editFoodTable/editFood.php",  
-         method:"POST",  
-         success:function(data){  
-              $('#live_data').html(data);  
+        type: "POST",
+        url: "php/editFoodTable/editFood.php",
+        data: dataString,
+        cache: false,
+        crossDomain : true,   
+         success:function(result){  
+              $('#live_data').html(result);  
          }  
     });  
 }
@@ -68,7 +73,7 @@ function findFoodData(){
 }
 
 function test(){
-    console.log("SUCCESS");
+    console.log();
 }
 
 

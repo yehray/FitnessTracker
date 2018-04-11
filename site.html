@@ -13,6 +13,11 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
             <script src="javascript/editFoodTable.js"></script>
             <script>
+                $(function() {
+                    // $("#datepicker").datepicker().datepicker( "setDate", new Date());
+                    $("#datepicker").datepicker({onSelect: fetch_data}).datepicker( "setDate", new Date());
+                });
+
                 $(document).ready(function() {
                     fetch_data();
                     $(document).on('click', '#addButton', function(){
@@ -32,16 +37,11 @@
                             $("#tags").autocomplete({
                                     source: foodArray
                             });
-                    }  
-                    
-                    
-                    
+                    }        
                     });
                 });
        
-                $(function() {
-                    $("#datepicker").datepicker().datepicker( "setDate", new Date());
-                });
+
           
                 });
             </script>

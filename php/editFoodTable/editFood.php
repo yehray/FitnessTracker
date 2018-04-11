@@ -3,7 +3,8 @@ $connection = mysqli_connect("localhost", "root", "password", "fitness_database"
 $output = '';
 session_start();
 $username = $_SESSION['username']; 
-$result = mysqli_query($connection, "SELECT * FROM DailyFoodData WHERE username = '$username'")or die("Unable to connect to MySQL");
+$date2 = $_POST['date1'];
+$result = mysqli_query($connection, "SELECT * FROM DailyFoodData WHERE username = '$username' AND Dates = '$date2'")or die("Unable to connect to MySQL");
 // $result = mysqli_query($connection, "SELECT * FROM FitnessData");
 
 $totalCalories = 0;
