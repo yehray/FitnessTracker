@@ -14,10 +14,8 @@
             <script src="javascript/editFoodTable.js"></script>
             <script>
                 $(function() {
-                    // $("#datepicker").datepicker().datepicker( "setDate", new Date());
                     $("#datepicker").datepicker({onSelect: fetch_data}).datepicker( "setDate", new Date());
                 });
-
                 $(document).ready(function() {
                     fetch_data();
                     $(document).on('click', '#addButton', function(){
@@ -39,10 +37,7 @@
                             });
                     }        
                     });
-                });
-       
-
-          
+                });       
                 });
             </script>
     </head>

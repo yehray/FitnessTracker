@@ -1,3 +1,5 @@
+inTable =  true;
+
 function fetch_data(){
     var date = new Date(document.getElementById("datepicker").value).toISOString();
     var dataString = 'date1=' + date.slice(0,10);
@@ -36,10 +38,11 @@ function insert_data(){
     var calories = document.getElementById("editCalories").innerHTML; 
     var protein = document.getElementById("editProtein").innerHTML;  
     var carbohydrates = document.getElementById("editCarbohydrates").innerHTML;  
-    var sugars = document.getElementById("editSugars").innerHTML;  
- 
-   var dataString = 'date1=' + date.slice(0,10) + '&food1=' + food + '&calories1=' + calories + '&protein1=' + protein + '&carbohydrates1=' + carbohydrates + '&sugars1=' + sugars;
-   $.ajax({
+    var sugars = document.getElementById("editSugars").innerHTML;   
+    var dataString = 'date1=' + date.slice(0,10) + '&food1=' + food + '&calories1=' + calories + '&protein1=' + protein + '&carbohydrates1=' + carbohydrates + '&sugars1=' + sugars + '&inTable1=' + inTable;
+    console.log(dataString);
+    inTable =  true;
+    $.ajax({
        type: "POST",
        url: "php/editFoodTable/insert.php",
        data: dataString,
@@ -67,11 +70,17 @@ function findFoodData(){
             document.getElementById("editProtein").innerHTML = foodArray[1];
             document.getElementById("editCarbohydrates").innerHTML =foodArray[2];
             document.getElementById("editSugars").innerHTML = foodArray[3];
-        }
+            callBack(foodArray);
+        },
    });
    return false;
 }
 
+function callBack(foodArray){
+    if(foodArray[0] == null){
+        inTable = false;
+    }
+}
 function test(){
     console.log();
 }

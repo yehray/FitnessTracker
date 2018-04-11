@@ -8,6 +8,9 @@ $result = mysqli_query($connection, "SELECT * FROM DailyFoodData WHERE username 
 // $result = mysqli_query($connection, "SELECT * FROM FitnessData");
 
 $totalCalories = 0;
+$totalProtein = 0;
+$totalcCarbohydrates = 0;
+$totalSugars = 0;
 $output .= 
         '<div class="table-responsive">  
         <table class="table table-bordered">  
@@ -23,6 +26,10 @@ $output .=
 
 if(mysqli_num_rows($result) > 0){  
       while($row = mysqli_fetch_array($result)){ 
+          $totalCalories += $row['Calories'];
+          $totalProtein += $row['Protein'];
+          $totalcCarbohydrates += $row['Carbohydrates'];
+          $totalSugars += $row['Sugars'];
            $output .=  
                 '<tr>  
                     <td class="idClass" id="idNum">'.$row['id'].'</td>    
@@ -46,7 +53,21 @@ if(mysqli_num_rows($result) > 0){
                 <td id="editCarbohydrates" contenteditable></td>  
                 <td id="editSugars" contenteditable></td>    
                 <td><button type="button" name="addButton" id="addButton">+</button></td>  
-           </tr> ';  
+           </tr> 
+           <tr >
+           <th></th> 
+           <th>TOTAL:</th> 
+           <th>'.$totalCalories.'</th> 
+           <th>'.$totalProtein.'</th> 
+           <th>'.$totalcCarbohydrates.'</th> 
+           <th>'.$totalSugars.'</th> 
+
+          </tr>      
+           '
+           
+           
+           
+           ;  
  }  
  else  
  {  
