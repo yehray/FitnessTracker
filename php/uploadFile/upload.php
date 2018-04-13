@@ -14,8 +14,8 @@ $finalFilePath = $target_dir . $username . date("Y-m-d H:i:s") . '.' . $fileType
 
 if(file_exists("$finalFilePath ")) unlink("$finalFilePath");
 
-if($fileType != "xlsx") {
-    echo "Only xlsx files are allowed.";
+if($fileType != "csv") {
+    echo "Only csv files are allowed.";
     $uploadOk = 0;
 }
 

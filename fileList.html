@@ -13,6 +13,8 @@
                 get_files();
                 $(document).on('click', '.deleteButton', function(){
                     delete_file(this.id)});
+                $(document).on('click', '.useFileButton', function(){
+                    use_file(this.id)});
             });
         </script>
 
@@ -21,9 +23,18 @@
     <body>  
         <div class="container">  
             <div class="table-responsive">  
-                <h3 align="center">List of Files</h3><br />  
+                <h3 align="center">List of Files</h3><br/>  
                 <div id="live_data"></div>   
             </div>  
         </div>  
+
+        <div>
+            <h4>Upload a new file</h4><br/>  
+            <form id="fileToUpload">
+                    Select file to upload:
+                    <input type="file" name="fileToUpload" >
+                    <input type="submit" onclick="uploadFile()" value="Upload File" name="submit">
+            </form>
+        </div>
     </body>  
 </html>  
