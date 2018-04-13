@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <meta charset="UTF-8">  
+        <title>Table</title>  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+        <script src="javascript/getFiles.js"></script>
+        <script>
+            $(document).ready(function() {
+                get_files();
+                $(document).on('click', '.deleteButton', function(){
+                    delete_file(this.id)});
+            });
+        </script>
+
+
+    </head>  
+    <body>  
+        <div class="container">  
+            <div class="table-responsive">  
+                <h3 align="center">List of Files</h3><br />  
+                <div id="live_data"></div>   
+            </div>  
+        </div>  
+    </body>  
+</html>  

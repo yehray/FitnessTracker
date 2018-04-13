@@ -73,7 +73,12 @@
 
         <input type="button" value="Next Day" onClick="increaseDate()"/>
         <input type="button" value="Previous Day" onClick="decreaseDate()"/>
-
+        
+        <form id="fileToUpload">
+            Select file to upload:
+            <input type="file" name="fileToUpload" >
+            <input type="submit" onclick="uploadFile()" value="Upload File" name="submit">
+        </form>
 
         <div class="container">  
                 <div class="table-responsive">  
@@ -81,6 +86,10 @@
                     <div id="live_data"></div>   
                 </div>  
         </div> 
+
+        <form action="php/learner/executeLearner.php" method="get">
+                <input type="submit" value="Run me now!">
+         </form>
 
     </body>
 

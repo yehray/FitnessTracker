@@ -97,6 +97,21 @@ function decreaseDate(){
     fetch_data();
 }
 
+function uploadFile(){
+    var form_data = new FormData($("#fileToUpload")[0]);
+    $.ajax({  
+        type: "POST",   
+        url: "php/uploadFile/upload.php", 
+        data: form_data,                         
+        dataType: "text",  
+        cache: false,
+        contentType: false,
+        processData: false,
+         success:function(result){  
+             alert(result);
+         }  
+    }); 
+}
 
 function test(){
     console.log();
