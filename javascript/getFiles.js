@@ -67,4 +67,16 @@ function use_file(idCLicked){
    return false;
  }
 
-
+ function downloadFile(){
+     console.log("sds");
+    $.ajax({  
+        type: "GET",   
+        url: "php/uploadFile/downloadFile.php",  
+        cache: false,
+        contentType: false,
+        processData: false,
+         success:function(result){ 
+            alert(result);
+         }  
+    }); 
+}

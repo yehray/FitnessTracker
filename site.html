@@ -70,14 +70,17 @@
                 window.location = 'results.html'
             }
        </script> -->
-
+       <input type="button" value="Previous Day" onClick="decreaseDate()"/>
         <input type="button" value="Next Day" onClick="increaseDate()"/>
-        <input type="button" value="Previous Day" onClick="decreaseDate()"/>
         
         <form id="fileToUpload">
             Select file to upload:
             <input type="file" name="fileToUpload" >
             <input type="submit" onclick="uploadFile()" value="Upload File" name="submit">
+        </form>
+
+        <form action="php/uploadFile/downloadFile.php" method="get">
+            <input type="submit" value="Download">
         </form>
 
         <div class="container">  

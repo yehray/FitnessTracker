@@ -23,10 +23,9 @@ if ($uploadOk == 0) {
     echo "\nYour file was not uploaded.";
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $finalFilePath)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        echo "The file has been uploaded.";
     } else {
         echo "\nThere was an error uploading your file.";
     }
 }
-
 ?>
