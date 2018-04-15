@@ -49,9 +49,9 @@ function uploadFile(){
 
 function use_file(idCLicked){
     var fileName = idCLicked;
-    var r = confirm("Are you sure you want to use this file?")
+    // var r = confirm("Are you sure you want to use this file?")
     var dataString = "fileName1=" + fileName;
-    if(r == true){
+    // if(r == true){
          $.ajax({  
              type: "POST",
              url: "php/uploadFile/loadToSQL.php",
@@ -60,10 +60,10 @@ function use_file(idCLicked){
              crossDomain : true, 
              success:function(data){
                  get_files();  
-                 alert("New file added.");
+                //  alert("New file added.");
              }  
          });
-     }
+    //  }
    return false;
  }
 
