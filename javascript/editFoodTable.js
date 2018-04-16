@@ -35,14 +35,16 @@ function delete_data(idCLicked){
 function insert_data(){ 
     var date = new Date(document.getElementById("datepicker").value).toISOString();
     var weight = document.getElementById("weight").value; 
-    console.log(weight);
+    if(weight == ''){
+        alert("Please enter in weight");
+        return true;
+    }
     var food = document.getElementById("tags").value; 
     var calories = document.getElementById("editCalories").innerHTML; 
     var protein = document.getElementById("editProtein").innerHTML;  
     var carbohydrates = document.getElementById("editCarbohydrates").innerHTML;  
     var sugars = document.getElementById("editSugars").innerHTML;   
     var dataString = 'date1=' + date.slice(0,10) + '&food1=' + food + '&calories1=' + calories + '&weight1=' + weight + '&protein1=' + protein + '&carbohydrates1=' + carbohydrates + '&sugars1=' + sugars + '&inTable1=' + inTable;
-    console.log(dataString);
     inTable =  true;
     $.ajax({
        type: "POST",
