@@ -35,7 +35,7 @@ function delete_data(idCLicked){
 function insert_data(){ 
     var date = new Date(document.getElementById("datepicker").value).toISOString();
     var weight = document.getElementById("weight").value; 
-    if(weight == ''){
+    if(weight == 0){
         alert("Please enter in weight");
         return true;
     }
@@ -86,12 +86,28 @@ function callBack(foodArray){
     }
 }
 
+function getWeight(){
+    var date = new Date(document.getElementById("datepicker").value).toISOString();
+    var dataString = 'getDate=' + date.slice(0,10);
+    $.ajax({  
+        type: "POST",   
+        url: "php/editFoodTable/getWeight.php", 
+        data: dataString,
+        dataType: "text",  
+        cache: false,
+        crossDomain : true,
+        success:function(result){  
+            document.getElementById("weight").value = result;
+        }  
+    }); 
+}
 
 function increaseDate(){
     var nextDay = $('#datepicker').datepicker('getDate'); 
     nextDay.setDate(nextDay.getDate()+1); 
     $('#datepicker').datepicker('setDate', nextDay);
     fetch_data();
+    getWeight();
 }
 
 function decreaseDate(){
@@ -99,6 +115,7 @@ function decreaseDate(){
     prevDay.setDate(prevDay.getDate()-1); 
     $('#datepicker').datepicker('setDate', prevDay);
     fetch_data();
+    getWeight();
 }
 
 function uploadFile(){
@@ -116,6 +133,8 @@ function uploadFile(){
          }  
     }); 
 }
+
+
 
 function test(){
     console.log();

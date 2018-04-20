@@ -11,9 +11,10 @@ $totalCalories = 0;
 $totalProtein = 0;
 $totalcCarbohydrates = 0;
 $totalSugars = 0;
+
 $output .= 
         '
-        <h3 align="center">Fitness Data for '.$date2.'</h3><br />  
+        <h3 align="center" id="tableTitle">FITNESS DATA FOR:   '.date("m-d-Y", strtotime($date2)).'</h3><br />  
         <div class="table-responsive">  
         <table class="table table-bordered">  
             <tr> 

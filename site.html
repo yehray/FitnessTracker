@@ -19,6 +19,7 @@
                 });
                 $(document).ready(function() {
                     fetch_data();
+                    getWeight();
                     $(document).on('click', '#addButton', function(){
                         insert_data()});
                     $(document).on('click', '.deleteButton', function(){
@@ -78,6 +79,9 @@
        </script> -->
         <input type="button" value="Previous Day" onClick="decreaseDate()"/>
         <input type="button" value="Next Day" onClick="increaseDate()"/>
+
+        <input type="button" value="TEST" onClick="getWeight()"/>
+
         
         <form id="fileToUpload">
             Select file to upload:
@@ -92,6 +96,8 @@
         <form action="php/learner/executeLearner.php" method="get">
             <input type="submit" value="Run me now!">
         </form>
+
+        
     </div>
 
     <div class="column colRight">  
