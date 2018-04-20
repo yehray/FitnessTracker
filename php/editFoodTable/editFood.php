@@ -13,12 +13,11 @@ $totalcCarbohydrates = 0;
 $totalSugars = 0;
 $output .= 
         '
-        <h3 align="center">Table for '.$date2.'</h3><br />  
+        <h3 align="center">Fitness Data for '.$date2.'</h3><br />  
         <div class="table-responsive">  
         <table class="table table-bordered">  
             <tr> 
-                <th width="5%">ID</th>  
-                <th width="20%">Food</th>  
+                <th width="25%">Food</th>  
                 <th width="20%">Calories</th>  
                 <th width="15%">Protein</th>  
                 <th width="15%">Carbohydrates</th>  
@@ -33,8 +32,7 @@ if(mysqli_num_rows($result) >= 0){
         $totalcCarbohydrates += $row['Carbohydrates'];
         $totalSugars += $row['Sugars'];
         $output .=  
-            '<tr>  
-                <td class="idClass" id="idNum">'.$row['id'].'</td>    
+            '<tr class = dataRows>  
                 <td class="foodClass" contenteditable id="'.$row['Food'].'" data-id="'.$row['id'].'">'.$row['Food'].'</td>  
                 <td class="caloriesClass" contenteditable id="'.$row['Calories'].'" data-id="'.$row['id'].'">'.$row['Calories'].'</td>  
                 <td class="proteinClass" contenteditable id="'.$row['Protein'].'" data-id="'.$row['id'].'"> '.$row['Protein'].'</td>
@@ -44,8 +42,7 @@ if(mysqli_num_rows($result) >= 0){
             </tr>';   
       }  
       $output .=   
-                '<tr >
-                <th width="10%">id</th> 
+                '<tr class = dataRows>
                 <th width="10%">
                 <div class="ui-widget" id="addFood">
                 <input id="tags" class="searchBar">
@@ -56,7 +53,7 @@ if(mysqli_num_rows($result) >= 0){
                     <td id="editSugars" contenteditable></td>    
                     <td><button type="button" name="addButton" id="addButton">+</button></td>  
                 </tr> 
-                <tr >
+                <tr class = dataRows>
                 <th></th> 
                 <th>TOTAL:</th> 
                 <th>'.$totalCalories.'</th> 

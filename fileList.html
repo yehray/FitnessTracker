@@ -7,6 +7,8 @@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
         <script src="javascript/getFiles.js"></script>
         <script>
             $(document).ready(function() {
@@ -17,19 +19,37 @@
                     use_file(this.id)});
             });
         </script>
-
-
     </head>  
+
+    <header>
+            <div class="navBarWrapper">
+                <div class="top bar">
+                    <ul class="left">
+                        <li class="title">FITNESS TRACKER</li>
+                    </ul>
+                    <ul class="right">
+                            <div class="topnav">
+                                    <a href="#">home</a>
+                                    <a href="#">data</a>
+                                    <a href="#">files</a>
+                                    <a href="#">login</a>                 
+                            </div>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    <body>
+
     <body>  
-        <div class="container">  
-            <div class="table-responsive">  
+            <div class = "column colRight">
+                    <div class="table-responsive">  
                 <h3 align="center">List of Files</h3><br/>  
                 <div id="live_data"></div>   
             </div>  
         </div>  
 
-        <div>
-            <h4>Upload a new file</h4><br/>  
+        <div class = "column colLeft">
+                <h4>Upload a new file</h4><br/>  
             <form id="fileToUpload">
                     Select file to upload:
                     <input type="file" name="fileToUpload" >

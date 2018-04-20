@@ -9,6 +9,7 @@
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+            <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
             <script src="javascript/editFoodTable.js"></script>
             <script src="javascript/script.js"></script>
@@ -41,27 +42,32 @@
                 });
             </script>
     </head>
-
     <header>
-        FITNESS TRACKER
-    </header>
-
-    <div class="topnav">
-            <a href="#">Home</a>
-            <a href="#">See Data</a>
-            <a href="#">Uploaded Files</a>
-    </div>
-
+            <div class="navBarWrapper">
+                <div class="top bar">
+                    <ul class="left">
+                        <li class="title">FITNESS TRACKER</li>
+                    </ul>
+                    <ul class="right">
+                            <div class="topnav">
+                                    <a href="#">home</a>
+                                    <a href="#">data</a>
+                                    <a href="#">files</a>
+                                    <a href="#">login</a>                 
+                            </div>
+                    </ul>
+                </div>
+            </div>
+        </header>
     <body>
-        <form>
+
+    <div class = "column colLeft">
+        <form id="dataInputs">
             Current Date:<br>
             <input id="datepicker" type="text" name="pick date"><br>
-            Number of Calories:<br>
-            <input id=calories type="text" name="number of calories"><br>
             Weight:<br>
-            <input id=weight type="text" name="current weight"><br>
+            <input id="weight" type="text" name="current weight"><br>
             <input id="submit" onclick="addData()" type="button" value="Submit"><br>
-            <input id="delete" onclick="deleteData()" type="button" value="Delete">
         </form>
 
 
@@ -70,7 +76,7 @@
                 window.location = 'results.html'
             }
        </script> -->
-       <input type="button" value="Previous Day" onClick="decreaseDate()"/>
+        <input type="button" value="Previous Day" onClick="decreaseDate()"/>
         <input type="button" value="Next Day" onClick="increaseDate()"/>
         
         <form id="fileToUpload">
@@ -83,16 +89,24 @@
             <input type="submit" value="Download">
         </form>
 
-        <div class="container">  
-                <div class="table-responsive">  
-                    This is a table<br/>
-                    <div id="live_data"></div>   
-                </div>  
-        </div> 
-        
         <form action="php/learner/executeLearner.php" method="get">
-                <input type="submit" value="Run me now!">
+            <input type="submit" value="Run me now!">
         </form>
+    </div>
+
+    <div class="column colRight">  
+            <div class="table-responsive">  
+                <div id="live_data"></div>   
+            </div>  
+    </div>
+    
+    <div class="footer">
+            <p>Footer</p>
+    </div>
+        
+
+    
+
 
     </body>
 
