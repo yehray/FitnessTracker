@@ -5,7 +5,8 @@ $directory = '/Users/yehray/Sites/fitness_tracker/uploads/';
 $files = glob($directory . $username. '*.csv');
 
 $output .= 
-        '<div class="table-responsive">  
+        '<h3 align="center" id="tableTitle">List of Files Uploaded</h3>
+        <div class="table-responsive">  
         <table class="table table-bordered">  
             <tr> 
                 <th width="60%">File Name</th>  
@@ -15,7 +16,7 @@ $output .=
  if(count($files) > 0){  
     foreach($files as $file)
            $output .=  
-                '<tr>  
+                '<tr class = dataRows>  
                     <td class="fileClass" id="files">'.basename($file).'</td>    
                     <td style="text-align:center"><button type="button" class="deleteButton" id="'.basename($file).'">x</button></td>  
                     <td style="text-align:center"><button type="button" class="useFileButton" id="'.basename($file).'">Use this file</button></td>  
@@ -23,7 +24,7 @@ $output .=
  }  
  else  
  {  
-      $output .='<tr>  
+      $output .='<tr class = dataRows>  
                     <td colspan="3">No files uploaded</td>
                 </tr>';  
  }  

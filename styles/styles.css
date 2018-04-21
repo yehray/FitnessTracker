@@ -1,6 +1,13 @@
 
+html{
+    height:100%;
+    overflow: auto;
+}
+
 body {
-    /* overflow: auto; */
+    height:100%;
+    overflow: auto;
+    background-color: #f2f2f2;
 }
 
 header {
@@ -11,7 +18,7 @@ header {
 }
 
 .title {
-    color: black;
+    color: white;
     font-size: 28px;
     font-family: 'Roboto';
     font-weight: 900;
@@ -75,6 +82,12 @@ header {
     margin-top: 15px;
 }
 
+#run {
+    font-size: 18px;
+    margin-left: 5%;
+    margin-top: 15px;
+}
+
 input[type=button] {
     color:#08233e;
     background-color: #cceeff;
@@ -89,8 +102,9 @@ input[type=button] {
 
 #upload {
     margin-top: 35px;
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 5%;
+    height: 100%;
 }
 
 #uploadButtons {
@@ -99,13 +113,17 @@ input[type=button] {
     font-family: 'Roboto';
     border-radius: 8px;
     cursor:pointer;
-    font-size: 18px;
+    font-size: 14px;
     margin-top: 10px;
     padding: 5px;
 }
 
 #uploadElement{
-    margin-top: 10px;
+    margin-top: 8px;
+}
+
+#downloadElement{
+    margin-top: 15%;
 }
 
 #downloadButton{
@@ -113,8 +131,7 @@ input[type=button] {
     background-color: #cceeff;
     font-family: 'Roboto';
     border-radius: 8px;    
-    font-size: 16px;
-
+    font-size: 14px;
 }
 
 #runButton{
@@ -130,20 +147,20 @@ input[type=button] {
     float: left;
     padding: 30px;
     margin-top: 70px;
-    overflow: auto;
+    overflow: hidden;
+    height: 100%;
 }
 
 .colLeft {
   width: 25%;
   background-color: #cceeff;
-  height:100%;
+  height: 100%;
 }
 
 .colRight {
   width: 75%;
   background-color: #f2f2f2;
-  height:100%;
-
+  height: 100%;
 }
 
 table {
@@ -185,5 +202,14 @@ tr:first-child {
     color: white;
     text-align: center;
     z-index: 10;
-
 }
+
+.login {
+    width: 350px;
+    padding: 35px;
+    font: 14px;
+    font-family: 'Roboto';
+    margin-top: 35px;
+    margin-left: 15px;
+}
+

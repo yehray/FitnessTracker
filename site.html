@@ -44,27 +44,26 @@
             </script>
     </head>
     <header>
-            <div class="navBarWrapper">
-                <div class="top bar">
-                    <ul class="left">
-                        <li>
-                            <a href="site.html" class="title">FITNESS TRACKER</a>
-                        </li>
-                    </ul>
-                    <ul class="right">
-                            <div class="topnav">
-                                    <a href="site.html">home</a>
-                                    <a href="#">about</a>
-                                    <a href="#">data</a>
-                                    <a href="fileList.html">files</a>
-                                    <a href="#">login</a>                 
-                            </div>
-                    </ul>
-                </div>
+        <div class="navBarWrapper">
+            <div class="top bar">
+                <ul class="left">
+                    <li>
+                        <a href="site.html" class="title">FITNESS TRACKER</a>
+                    </li>
+                </ul>
+                <ul class="right">
+                        <div class="topnav">
+                                <a href="site.html">home</a>
+                                <a href="about.html">about</a>
+                                <a href="#">data</a>
+                                <a href="fileList.html">files</a>
+                                <a href="login.html">login</a>                 
+                        </div>
+                </ul>
             </div>
-        </header>
+        </div>
+    </header>
     <body>
-
     <div class = "column colLeft">
         <form id="dataInputs">
             <div id="inputs">
@@ -86,9 +85,10 @@
         <input type="button" id="nextDay" value="Previous Day" onClick="decreaseDate()"/>
         <input type="button" id="prevDay" value="Next Day" onClick="increaseDate()"/>
 
-        <input type="button" value="TEST" onClick="getWeight()"/>
+        <!-- <input type="button" value="TEST" onClick="getWeight()"/> -->
 
         <div id=run>
+            Predict tomorrow's weight based on today's nutrition data.<br>
             <form action="php/learner/executeLearner.php" method="get">
                 <input type="submit" value="Run me now!" id="runButton">
             </form>
@@ -100,9 +100,11 @@
                 <div id=uploadElement><input type="file" name="fileToUpload" ></div>
                 <div id=uploadElement><input type="submit" onclick="uploadFile()" value="Upload File" name="submit" id="uploadButtons"></div>
             </form>
-            <form action="php/uploadFile/downloadFile.php" method="get">
-                Download data as a csv file: <input type="submit" value="Download" id="downloadButton">  <br>
-            </form>
+            <div id=downloadElement>
+                <form action="php/uploadFile/downloadFile.php" method="get">
+                    Download data as a csv file: <input type="submit" value="Download" id="downloadButton">  <br>
+                </form>
+            </div>
         </div>
 
         

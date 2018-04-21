@@ -18,12 +18,12 @@ $output .=
         <div class="table-responsive">  
         <table class="table table-bordered">  
             <tr> 
-                <th width="25%">Food</th>  
-                <th width="20%">Calories</th>  
-                <th width="15%">Protein</th>  
-                <th width="15%">Carbohydrates</th>  
-                <th width="15%">Sugars</th>  
-                <th width="10%">Add/Delete</th>  
+                <th width="25%" style="text-align:center">Food</th>  
+                <th width="20%" style="text-align:center">Calories</th>  
+                <th width="15%" style="text-align:center">Protein</th>  
+                <th width="15%" style="text-align:center">Carbohydrates</th>  
+                <th width="15%" style="text-align:center">Sugars</th>  
+                <th width="10%" style="text-align:center">Add/Delete</th>  
             </tr>';  
 
 if(mysqli_num_rows($result) >= 0){  
@@ -55,11 +55,11 @@ if(mysqli_num_rows($result) >= 0){
                     <td><button type="button" name="addButton" id="addButton">+</button></td>  
                 </tr> 
                 <tr class = totalRow>
-                <th>TOTAL:</th> 
-                <th>'.$totalCalories.'</th> 
-                <th>'.$totalProtein.'</th> 
-                <th>'.$totalcCarbohydrates.'</th> 
-                <th>'.$totalSugars.'</th> 
+                <th style="text-align:center">TOTAL:</th> 
+                <th style="text-align:center">'.$totalCalories.'</th> 
+                <th style="text-align:center">'.$totalProtein.'</th> 
+                <th style="text-align:center">'.$totalcCarbohydrates.'</th> 
+                <th style="text-align:center">'.$totalSugars.'</th> 
                 </tr>      
                 '
                 ;  

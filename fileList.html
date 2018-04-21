@@ -2,7 +2,9 @@
 <html>  
     <head>
         <meta charset="UTF-8">  
-        <title>Table</title>  
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Fitness Tracker</title>  
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
@@ -25,36 +27,50 @@
         <div class="navBarWrapper">
             <div class="top bar">
                 <ul class="left">
-                    <li class="title">FITNESS TRACKER</li>
+                    <li>
+                        <a href="site.html" class="title">FITNESS TRACKER</a>
+                    </li>
                 </ul>
                 <ul class="right">
                         <div class="topnav">
                                 <a href="site.html">home</a>
+                                <a href="about.html">about</a>
                                 <a href="#">data</a>
                                 <a href="fileList.html">files</a>
-                                <a href="#">login</a>                   
+                                <a href="login.html">login</a>                 
                         </div>
                 </ul>
             </div>
         </div>
     </header>
 
-    <body>  
+    <body> 
+        <div class = "column colLeft">
+            <div id=upload>
+                <form id="fileToUpload">
+                    <div id=uploadElement>Select file to upload:<br></div>  
+                    <div id=uploadElement><input type="file" name="fileToUpload" ></div>
+                    <div id=uploadElement><input type="submit" onclick="uploadFile()" value="Upload File" name="submit" id="uploadButtons"></div>
+                </form>
+                <div id=downloadElement>
+                    <form action="php/uploadFile/downloadFile.php" method="get">
+                        Download data as a csv file: <input type="submit" value="Download" id="downloadButton">  <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     <div class = "column colRight">
         <div class="table-responsive">  
-            <h3 align="center">List of Files</h3><br/>  
             <div id="live_data"></div>   
         </div>  
     </div>  
 
-    <div class = "column colLeft">
-        <h4>Upload a new file</h4><br/>  
-        <form id="fileToUpload">
-            Select file to upload:
-            <input type="file" name="fileToUpload" >
-            <input type="submit" onclick="uploadFile()" value="Upload File" name="submit">
-        </form>
+    <div class="footer">
+            <p>Footer</p>
     </div>
+
+
 
     </body>  
 </html>  
