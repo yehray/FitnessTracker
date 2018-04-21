@@ -10,6 +10,15 @@ header {
     top:0;
 }
 
+.title {
+    color: black;
+    font-size: 28px;
+    font-family: 'Roboto';
+    font-weight: 900;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
 
 .topnav a {
     float: left;
@@ -59,16 +68,61 @@ header {
 #dataInputs {
     font-family: 'Roboto';
     font-size: 24px;
+    margin-left: 5%;
+}
+
+#inputs{
+    margin-top: 15px;
 }
 
 input[type=button] {
     color:#08233e;
+    background-color: #cceeff;
     font-family: 'Roboto';
     border-radius: 8px;
     cursor:pointer;
-    font-size: 12px;
+    font-size: 18px;
     margin: 10px;
+    margin-left: 5%;
     padding: 5px;
+}
+
+#upload {
+    margin-top: 35px;
+    font-size: 20px;
+    margin-left: 5%;
+}
+
+#uploadButtons {
+    color:#08233e;
+    background-color: #cceeff;
+    font-family: 'Roboto';
+    border-radius: 8px;
+    cursor:pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+#uploadElement{
+    margin-top: 10px;
+}
+
+#downloadButton{
+    color:#08233e;
+    background-color: #cceeff;
+    font-family: 'Roboto';
+    border-radius: 8px;    
+    font-size: 16px;
+
+}
+
+#runButton{
+    margin-top: 10px;
+    color:#08233e;
+    background-color: #cceeff;
+    font-family: 'Roboto';
+    border-radius: 8px;
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -77,14 +131,12 @@ input[type=button] {
     padding: 30px;
     margin-top: 70px;
     overflow: auto;
-
 }
 
 .colLeft {
   width: 25%;
   background-color: #cceeff;
   height:100%;
-
 }
 
 .colRight {
@@ -116,6 +168,12 @@ tr:first-child {
 
 .dataRows:hover {
     background-color: #d9d9d9;
+}
+
+.totalRow {
+    background-color: rgb(71, 110, 136);
+    color: white;
+    text-align: center;
 }
 
 .footer {

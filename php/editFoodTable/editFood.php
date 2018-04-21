@@ -54,8 +54,7 @@ if(mysqli_num_rows($result) >= 0){
                     <td id="editSugars" contenteditable></td>    
                     <td><button type="button" name="addButton" id="addButton">+</button></td>  
                 </tr> 
-                <tr class = dataRows>
-                <th></th> 
+                <tr class = totalRow>
                 <th>TOTAL:</th> 
                 <th>'.$totalCalories.'</th> 
                 <th>'.$totalProtein.'</th> 

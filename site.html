@@ -47,13 +47,16 @@
             <div class="navBarWrapper">
                 <div class="top bar">
                     <ul class="left">
-                        <li class="title">FITNESS TRACKER</li>
+                        <li>
+                            <a href="site.html" class="title">FITNESS TRACKER</a>
+                        </li>
                     </ul>
                     <ul class="right">
                             <div class="topnav">
-                                    <a href="#">home</a>
+                                    <a href="site.html">home</a>
+                                    <a href="#">about</a>
                                     <a href="#">data</a>
-                                    <a href="#">files</a>
+                                    <a href="fileList.html">files</a>
                                     <a href="#">login</a>                 
                             </div>
                     </ul>
@@ -64,11 +67,14 @@
 
     <div class = "column colLeft">
         <form id="dataInputs">
+            <div id="inputs">
             Current Date:<br>
             <input id="datepicker" type="text" name="pick date"><br>
+            </div>
+            <div id="inputs">
             Weight:<br>
             <input id="weight" type="text" name="current weight"><br>
-            <input id="submit" onclick="addData()" type="button" value="Submit"><br>
+            </div>
         </form>
 
 
@@ -77,25 +83,27 @@
                 window.location = 'results.html'
             }
        </script> -->
-        <input type="button" value="Previous Day" onClick="decreaseDate()"/>
-        <input type="button" value="Next Day" onClick="increaseDate()"/>
+        <input type="button" id="nextDay" value="Previous Day" onClick="decreaseDate()"/>
+        <input type="button" id="prevDay" value="Next Day" onClick="increaseDate()"/>
 
         <input type="button" value="TEST" onClick="getWeight()"/>
 
-        
-        <form id="fileToUpload">
-            Select file to upload:
-            <input type="file" name="fileToUpload" >
-            <input type="submit" onclick="uploadFile()" value="Upload File" name="submit">
-        </form>
+        <div id=run>
+            <form action="php/learner/executeLearner.php" method="get">
+                <input type="submit" value="Run me now!" id="runButton">
+            </form>
+        </div>
 
-        <form action="php/uploadFile/downloadFile.php" method="get">
-            <input type="submit" value="Download">
-        </form>
-
-        <form action="php/learner/executeLearner.php" method="get">
-            <input type="submit" value="Run me now!">
-        </form>
+        <div id=upload>
+            <form id="fileToUpload">
+                <div id=uploadElement>Select file to upload:<br></div>  
+                <div id=uploadElement><input type="file" name="fileToUpload" ></div>
+                <div id=uploadElement><input type="submit" onclick="uploadFile()" value="Upload File" name="submit" id="uploadButtons"></div>
+            </form>
+            <form action="php/uploadFile/downloadFile.php" method="get">
+                Download data as a csv file: <input type="submit" value="Download" id="downloadButton">  <br>
+            </form>
+        </div>
 
         
     </div>
@@ -110,10 +118,6 @@
             <p>Footer</p>
     </div>
         
-
-    
-
-
     </body>
 
 </html>

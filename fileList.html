@@ -29,10 +29,10 @@
                 </ul>
                 <ul class="right">
                         <div class="topnav">
-                                <a href="#">home</a>
+                                <a href="site.html">home</a>
                                 <a href="#">data</a>
-                                <a href="#">files</a>
-                                <a href="#">login</a>                 
+                                <a href="fileList.html">files</a>
+                                <a href="#">login</a>                   
                         </div>
                 </ul>
             </div>
@@ -40,21 +40,21 @@
     </header>
 
     <body>  
-            <div class = "column colRight">
-                    <div class="table-responsive">  
-                <h3 align="center">List of Files</h3><br/>  
-                <div id="live_data"></div>   
-            </div>  
+    <div class = "column colRight">
+        <div class="table-responsive">  
+            <h3 align="center">List of Files</h3><br/>  
+            <div id="live_data"></div>   
         </div>  
+    </div>  
 
-        <div class = "column colLeft">
-                <h4>Upload a new file</h4><br/>  
-            <form id="fileToUpload">
-                    Select file to upload:
-                    <input type="file" name="fileToUpload" >
-                    <input type="submit" onclick="uploadFile()" value="Upload File" name="submit">
-            </form>
-        </div>
-        
+    <div class = "column colLeft">
+        <h4>Upload a new file</h4><br/>  
+        <form id="fileToUpload">
+            Select file to upload:
+            <input type="file" name="fileToUpload" >
+            <input type="submit" onclick="uploadFile()" value="Upload File" name="submit">
+        </form>
+    </div>
+
     </body>  
 </html>  
