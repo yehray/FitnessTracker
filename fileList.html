@@ -35,7 +35,7 @@
                         <div class="topnav">
                                 <a href="site.html">home</a>
                                 <a href="about.html">about</a>
-                                <a href="#">data</a>
+                                <a href="graphs.html">graph</a>
                                 <a href="fileList.html">files</a>
                                 <a href="login.html">login</a>                 
                         </div>
@@ -45,20 +45,20 @@
     </header>
 
     <body> 
-        <div class = "column colLeft">
-            <div id=upload>
-                <form id="fileToUpload">
-                    <div id=uploadElement>Select file to upload:<br></div>  
-                    <div id=uploadElement><input type="file" name="fileToUpload" ></div>
-                    <div id=uploadElement><input type="submit" onclick="uploadFile()" value="Upload File" name="submit" id="uploadButtons"></div>
+    <div class = "column colLeft">
+        <div id=upload>
+            <form id="fileToUpload">
+                <div id=uploadElement>Select file to upload:<br></div>  
+                <div id=uploadElement><input type="file" name="fileToUpload" ></div>
+                <div id=uploadElement><input type="submit" onclick="uploadFile()" value="Upload File" name="submit" id="uploadButtons"></div>
+            </form>
+            <div id=downloadElement>
+                <form action="php/uploadFile/downloadFile.php" method="get">
+                    Download data as a csv file: <input type="submit" value="Download" id="downloadButton">  <br>
                 </form>
-                <div id=downloadElement>
-                    <form action="php/uploadFile/downloadFile.php" method="get">
-                        Download data as a csv file: <input type="submit" value="Download" id="downloadButton">  <br>
-                    </form>
-                </div>
             </div>
         </div>
+    </div>
 
     <div class = "column colRight">
         <div class="table-responsive">  
