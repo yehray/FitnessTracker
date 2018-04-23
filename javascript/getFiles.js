@@ -68,7 +68,6 @@ function use_file(idCLicked){
  }
 
  function downloadFile(){
-     console.log("sds");
     $.ajax({  
         type: "GET",   
         url: "php/uploadFile/downloadFile.php",  
@@ -88,7 +87,9 @@ function getGraphs(){
         cache: false,
         crossDomain : true,   
          success:function(result){  
-            //   $('#live_data').html(result);  
+             console.log(result);
+            $('#live_data').html(result);  
+
          }  
     });  
 }
