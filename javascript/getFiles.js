@@ -87,9 +87,22 @@ function getGraphs(){
         cache: false,
         crossDomain : true,   
          success:function(result){  
-             console.log(result);
             $('#live_data').html(result);  
-
+            var imgs = document.getElementsByTagName("img");
+            deleteGraphs(imgs[0].src);
          }  
+    });  
+}
+
+function deleteGraphs(fileName){
+        var dataString = "fileName1=" + fileName;
+        $.ajax({  
+            type: "POST",
+            url: "php/learner/deleteGraphs.php",
+            data: dataString,
+            cache: false,
+            crossDomain : true,   
+            success:function(result){  
+        }  
     });  
 }
