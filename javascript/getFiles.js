@@ -87,7 +87,7 @@ function getGraphs(){
         cache: false,
         crossDomain : true,   
          success:function(result){  
-            $('#live_data').html(result);  
+            $('#graph_data').html(result);  
             var imgs = document.getElementsByTagName("img");
             deleteGraphs(imgs[0].src);
          }  

@@ -89,9 +89,12 @@
 
         <div id=run>
             Predict tomorrow's weight based on today's nutrition data.<br>
-            <form action="php/learner/executeLearner.php" method="get">
-                <input type="submit" value="Run me now!" id="runButton">
-            </form>
+            <!-- <form action="php/learner/executeLearner.php" method="get">
+                <input type="submit" value="Predict!" id="runButton">
+            </form> -->
+            <input type="button" id="predictButton" value="Predict" onClick="startLearner()"/>
+            <div id="predictedValue"></div>
+
         </div>
 
         <div id=upload>

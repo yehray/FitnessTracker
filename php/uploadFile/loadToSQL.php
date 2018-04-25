@@ -2,6 +2,7 @@
 session_start();
 $username = $_SESSION['username'];
 $connection = mysqli_connect("localhost", "root", "password", "fitness_database") or die("Unable to connect to MySQL");  
+$query = mysqli_query($connection, "DELETE FROM DailyFoodData WHERE Username = '$username'");
 
 // Allow line terminators for Windows and UNIX
 ini_set("auto_detect_line_endings", true);
@@ -22,7 +23,6 @@ while(!feof($fileHandle)) {
     $date = $data[6];
     // Change date format to YYYY-MM-DD;
     $newDate = date('Y-m-d', strtotime($date));
-    echo $newDate;
     $query2 = mysqli_query($connection, "INSERT INTO DailyFoodData(Food, Calories, Weight, Protein, Carbohydrates, Sugars, Username, Dates) VALUES ('$food', '$calories', '$weight', '$protein', '$carbohydrates', '$sugars', '$username', '$newDate')")
     or die("Unable to connect to MySQL");
 }

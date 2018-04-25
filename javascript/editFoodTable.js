@@ -134,6 +134,19 @@ function uploadFile(){
     }); 
 }
 
+function startLearner(){
+    $.ajax({  
+        type: "POST",   
+        url: "php/learner/executeLearner.php", 
+        dataType: "text",  
+        cache: false,
+        contentType: false,
+        processData: false,
+         success:function(result){  
+            document.getElementById("predictedValue").innerHTML =result 
+        }  
+    }); 
+}
 
 
 function test(){
