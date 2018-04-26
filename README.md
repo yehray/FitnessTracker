@@ -14,7 +14,9 @@ List of Files Page<br/>
 **![](images/screenshot3.png)**
 
 <br/>
+
 # Features
+
 * Users enter in the types of food eaten each day in the table on the main page.<br/>
 * Each entry for food needs to have the food name, number of calories, grams of protein, grams of carbohydrates, and grams of sugar.<br/>
 * Some commonly eaten foods are already saved and will autopopulate all of the nutrition data when selected in the search bar in the table.<br/>
