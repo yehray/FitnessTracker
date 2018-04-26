@@ -64,4 +64,4 @@ pred = regressor.predict(predictInput)
 y_pred = regressor.predict(x_test)
 predictedWeight = predictWeight + pred
 error = np.mean((regressor.predict(x_test) - y_test) ** 2)
-print("Tomorrow's weight will be " + str(predictedWeight[0][0]) + " with a mean squared error of " + str(error) + ".")
+print("Tomorrow's weight will be " + str(format(predictedWeight[0][0], '.2f')) + " with a mean squared error of " + str(format(error, '.2f')) + ".")
