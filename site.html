@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
             <title>Fitness Tracker</title>
@@ -11,19 +12,22 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
             <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-            <script src="javascript/editFoodTable.js"></script>
             <script src="javascript/script.js"></script>
+            <script src="javascript/editFoodTable.js"></script>
             <script>
                 $(function() {
                     $("#datepicker").datepicker({onSelect: fetch_data}).datepicker( "setDate", new Date());
                 });
                 $(document).ready(function() {
+                    check_login();
                     fetch_data();
                     getWeight();
                     $(document).on('click', '#addButton', function(){
                         insert_data()});
                     $(document).on('click', '.deleteButton', function(){
                         delete_data(this.id)});
+                    $(document).on('click', '#logout', function(){
+                        logout()});
                     $(document).on('blur', '.ui-widget', function(){
                         findFoodData()});
                     $(document).on('click', '#tags', function(){
@@ -57,12 +61,13 @@
                                 <a href="about.html">about</a>
                                 <a href="graphs.html">graph</a>
                                 <a href="fileList.html">files</a>
-                                <a href="login.html">login</a>                 
+                                <a href="login.html" id = "logout">logout</a>                 
                         </div>
                 </ul>
             </div>
         </div>
     </header>
+    
     <body>
     <div class = "column colLeft">
         <form id="dataInputs">
@@ -76,25 +81,14 @@
             </div>
         </form>
 
-
-        <!-- <script type="text/javascript" language="JavaScript">
-            function clickedButton(){
-                window.location = 'results.html'
-            }
-       </script> -->
         <input type="button" id="nextDay" value="Previous Day" onClick="decreaseDate()"/>
         <input type="button" id="prevDay" value="Next Day" onClick="increaseDate()"/>
 
-        <!-- <input type="button" value="TEST" onClick="getWeight()"/> -->
 
         <div id=run>
-            Predict tomorrow's weight based on today's nutrition data.<br>
-            <!-- <form action="php/learner/executeLearner.php" method="get">
-                <input type="submit" value="Predict!" id="runButton">
-            </form> -->
+            Predict tomorrow's weight.<br>
             <input type="button" id="predictButton" value="Predict" onClick="startLearner()"/>
             <div id="predictedValue"></div>
-
         </div>
 
         <div id=upload>
@@ -109,14 +103,13 @@
                 </form>
             </div>
         </div>
-
         
     </div>
 
     <div class="column colRight">  
-            <div class="table-responsive">  
-                <div id="live_data"></div>   
-            </div>  
+        <div class="table-responsive">  
+            <div id="live_data"></div>   
+        </div>  
     </div>
     
     <div class="footer">

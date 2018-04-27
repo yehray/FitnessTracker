@@ -97,4 +97,29 @@ function registration(){
     return false;
 }
 
+function check_login(){
+    $.ajax({
+        type: "GET",
+        url: "php/login/authentication.php",
+        cache: false,
+        crossDomain : true,
+        success: function(result) {
+            if(result == "not logged in"){
+                window.location = 'http://localhost/fitness_tracker/login.html';
+            }
+        }
+    });
+}
+
+
+function logout(){
+    $.ajax({
+        type: "GET",
+        url: "php/login/logout.php",
+        cache: false,
+        crossDomain : true,
+        success: function() {
+        }
+    });
+}
 

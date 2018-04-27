@@ -11,15 +11,19 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
         <link rel="stylesheet" type="text/css" href="styles/styles.css">
+        <script src="javascript/script.js"></script>
         <script src="javascript/getFiles.js"></script>
         <script>
             $(document).ready(function() {
+                check_login();
                 get_files();
                 $(document).on('click', '.deleteButton', function(){
                     delete_file(this.id)});
                 $(document).on('click', '.useFileButton', function(){
                     use_file(this.id)});
-            });
+                $(document).on('click', '#logout', function(){
+                    logout()});
+                });
         </script>
     </head>  
 
@@ -37,7 +41,7 @@
                                 <a href="about.html">about</a>
                                 <a href="graphs.html">graph</a>
                                 <a href="fileList.html">files</a>
-                                <a href="login.html">login</a>                 
+                                <a href="login.html" id = "logout">logout</a>                 
                         </div>
                 </ul>
             </div>
