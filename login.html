@@ -1,14 +1,24 @@
+<!DOCTYPE html>
 <html>
     <head>
-            <title>Fitness Tracker</title>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-            <script src="javascript/script.js"></script>
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-            <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-            <link rel="stylesheet" type="text/css" href="styles/styles.css">
+        <title>Fitness Tracker</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="javascript/script.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
+        <script>
+            $(document).ready(function() {
+                document.getElementById('password').onkeydown = function(event) {
+                    if (event.keyCode == 13) {
+                        login();
+                    }
+                };
+            });
+        </script>
     </head>
     <header>
         <div class="navBarWrapper">
@@ -36,7 +46,7 @@
                     <label>Username</label>
                     <div id="loginInput"><input id="username" type="text" name="username"></div><br>
                     <label>Password</label>
-                    <div id="loginInput"></div><input id=password type="password" name="password"></div><br>
+                    <div id="loginInput"></div><input id="password" type="password" name="password"></div><br>
                     <input id="submit" onclick="login()" type="button" value="Submit"><br>    
                 </form>
                 <br> 

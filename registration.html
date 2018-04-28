@@ -1,27 +1,54 @@
+<!DOCTYPE html>
 <html>
     <head>
-            <title>Fitness Tracker</title>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" type="text/css" href="styles/styles.css">
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-            <script src="javascript/script.js"></script>
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+        <title>Fitness Tracker</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="javascript/script.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
     </head>
-    <body>
-            <form>
-                Username:<br>
-                <input id="username" type="text" name="username"><br>
-                Password:<br>
-                <input id=password type="text" name="password"><br>
-                Email:<br>
-                <input id=email type="text" name="email"><br>
-                <input id="submit" onclick="registration()" type="button" value="Submit"><br>    
-            </form>
-
-            <div class="footer">
-                <p>Fitness Tracker 2018</p>
+    <header>
+        <div class="navBarWrapper">
+            <div class="top bar">
+                <ul class="left">
+                    <li>
+                        <a href="login.html" class="title">FITNESS TRACKER</a>
+                    </li>
+                </ul>
+                <ul class="right">
+                        <div class="topnav">
+                                <a href="login.html">login</a>                 
+                        </div>
+                </ul>
+            </div>
         </div>
+    </header>
     
-        </body>
-</html>
+    <body>
+    <div class="login">
+        <h2>Registration</h2>
+        <p>Please fill in the information to register.</p>
+        <div class="form-group">
+            <form>
+                <label>Username</label><br>
+                <div id="loginInput"><input id="username" type="text" name="username"></div><br>
+                <label>Password</label><br>
+                <div id="loginInput"><input id=password type="text" name="password"></div><br>
+                <label>Email</label><br>
+                <div id="loginInput"><input id=email type="text" name="email"></div><br>
+                <input id="submit" onclick="registration()" type="button" value="Submit"><br>  
+            </form>  
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Fitness Tracker 2018</p>
+    </div>
+
+    </body>
+</html>          
+            

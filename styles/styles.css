@@ -214,3 +214,11 @@ tr:first-child {
     margin-left: 15px;
 }
 
+#about{
+    font-family: 'Roboto';
+    padding: 35px;
+    margin-top: 35px;
+    margin-left: 15px;
+    width: 700px;
+}
+
